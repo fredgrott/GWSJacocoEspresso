@@ -1,0 +1,7 @@
+bin\*
+build\*
+gen\*
+.apt_generated\*
+local.properties
+/bin
+/build

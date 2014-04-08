@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="C:/opt/adt-bundle-windows-x86_64-20130522/adt-bundle-windows-x86_64-20130522/sdk/platforms/android-14/android.jar"/>
+	<classpathentry kind="lib" path="lib/espresso-contrib-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/org.jacoco.agent-0.7.0.201403182114-runtime.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

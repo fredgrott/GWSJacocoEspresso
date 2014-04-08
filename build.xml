@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ====================================================================== 
+     Apr 8, 2014 10:13:03 AM                                                        
+
+     GWSJacocoEspresso    
+     jacoco-espress runner to get code coverage
+                   
+     Fred Grott                                                                
+     ====================================================================== -->
+<project name="GWSJacocoEspresso" default="default">
+    <description>
+            jacoco-espress runner to get code coverage
+    </description>
+	<property file="local.properties" />
+	<property name="jar.dir" value="${basedir}/build/dist/gwsjacocoespresso"/>
+	<property name="jar.file" value="${jar.dir}/gwsjacocoespresso-1.0.0.jar"/>
+
+	
+	<path id="my.bootclasspath">
+	      
+		  
+		  <pathelement location="${rtjar}"/>
+	</path>
+	
+	<target name="compile" description="Compile Java source.">
+	                    <mkdir dir="build/classes"/>
+
+	                    <javac srcdir="src"
+	             debug="on"
+	             destdir="build/classes"
+	             source="1.6"
+	             target="1.6"
+	                        bootclasspath="${my.bootclasspath}"
+	             extdirs="">
+	                            <compilerarg value="-Xlint:all"/>
+	                            <classpath>
+	                            	<pathelement location="${basedir}/lib/espresso-contrib-1.1.jar"/>
+	                            	          <pathelement location="${basedir}/lib/org.jacoco.agent-0.7.0.201403182114-runtime.jar"/>
+	                            	<pathelement location="${androidjar}"/>
+	                            </classpath>
+	                    </javac>
+	    </target>
+	<target name="jar" depends="compile" description="Build jar.">
+	                    <mkdir dir="${jar.dir}"/>
+
+	                    
+
+	                    <jar jarfile="${jar.file}" >
+	                            <fileset dir="build/classes"/>
+	                            
+	                    </jar>
+	    </target>
+	<target name="clean"
+	          description="Remove generated files.">
+	                    <delete dir="build"/>
+	            </target>
+
+	            <target name="clean-jar" 
+	                    description="cleans and builds a .jar"
+	                    depends="clean,jar">
+	    </target>
+
+    <!-- ================================= 
+          target: default              
+         ================================= -->
+    <target name="default" depends="depends" description="jacoco-espress runner to get code coverage">
+        
+    </target>
+	
+	
+
+    <!-- - - - - - - - - - - - - - - - - - 
+          target: depends                      
+         - - - - - - - - - - - - - - - - - -->
+    <target name="depends">
+    </target>
+
+</project>
